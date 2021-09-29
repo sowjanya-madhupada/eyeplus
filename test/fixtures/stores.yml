@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  glasses_type: MyString
+  gender: MyString
+  frame_type: MyString
+  brand: MyString
+  price: 1.5
+  color: MyString
+
+two:
+  glasses_type: MyString
+  gender: MyString
+  frame_type: MyString
+  brand: MyString
+  price: 1.5
+  color: MyString

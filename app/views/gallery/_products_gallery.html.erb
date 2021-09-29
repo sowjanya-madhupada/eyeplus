@@ -1,0 +1,54 @@
+<section class="shop_section layout_padding">
+    <div class="container">
+    	<div class="row">
+		<% count=0 %>
+
+		<% @products.each do |g| %>
+		 <% if (count%4)==0 %>
+
+
+	</div><div class="row">
+	
+		<% end %>
+		<% count+=1 %>
+		
+
+		 
+		 	
+            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="box">
+          	<div>
+          		<div class="img-box"><%= image_tag g.product_image,height: "250",width: "250" %><br>
+		         </div>
+		   <div class="detail-box">
+			 <a href="">Glasses_Type:</a><%= g.glasses_type %><br>
+             <a href="">gender:</a><%= g.gender %><br>
+			 <a href="">Brand:</a><%= g.brand %><br>
+			 <a href="">Price:</a><%= g.price %><br>
+			 <a href="">Color:</a><%= g.color %><br>
+		
+		
+			<div class="heading_container heading_center">
+		    <div class="btn_box">
+			    <%= button_to 'Add to Cart', line_items_path(:store_id => g.id)%>
+        
+            </div></div></div></div></div></div>
+	        
+            
+		<% end %>
+
+		</div>
+    
+  
+
+         
+        </div>
+        <div class="heading_container heading_center">
+      	<div class="btn-box">
+        <a href="">
+          View All Products
+        </a>
+      </div>
+      	</div>
+    </div> 
+</section>

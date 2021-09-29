@@ -1,0 +1,15 @@
+<div class="col-md-4 info-col">
+<div class="info_contact">
+<h1>ADMIN LOGIN FORM</h1>
+
+<%= form_with do |form| %>
+  
+  <%= form.label :a, "Email:" %><br/>
+  <%= form.text_field :email %><br/>
+  <%= form.label :a, "Password" %><br/>
+  <%= form.password_field :password %><br/>
+  
+  <%= form.submit "Log in",:class=>"btn btn-info" %>
+<% end %>
+</div>
+</div>
