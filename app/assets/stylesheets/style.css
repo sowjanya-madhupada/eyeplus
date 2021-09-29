@@ -864,7 +864,11 @@ a:focus {
 .footer_section p a {
   color: inherit;
 }
-
+.gallery_img
+{
+  background-color:#F9F9F9;
+  padding:10px 10px 10px 10px;
+}
 
 
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,10 @@
-<section class="shop_section layout_padding">
+<div class="gallery_img">
     <div class="container">
     	<div class="row">
 		<% count=0 %>
-
-		<% @products.each do |g| %>
+         <% @products.each do |g| %>
 		 <% if (count%4)==0 %>
-
-
-	</div><div class="row">
+    </div><div class="row">
 	
 		<% end %>
 		<% count+=1 %>
@@ -51,4 +48,4 @@
       </div>
       	</div>
     </div> 
-</section>
+</div>

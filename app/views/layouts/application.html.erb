@@ -31,10 +31,11 @@
             <div id="myNav" class="overlay">
               <div class="overlay-content">
                 <a href="/home/index">Home</a>
-                <a href="about.html">About</a>
+                <a href="/home/about">About</a>
                 <a href="/gallery/index">Shop</a>
                 
                 <% if user_signed_in? %>
+                <% $text=current_user.email%>
                     Logged in as <strong><%= current_user.email %></strong>.
                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
                   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -82,7 +83,7 @@
              <a href="/admin/login">Admin login</a></li>
          <% end %>
             <div>
-              <a href="/gallery/index" class="slider-link">
+              <a href="/gallery/index/#lll" class="slider-link">
                 Shop Now
               </a>
             </div>
@@ -112,14 +113,13 @@
         </div>
       </div>
       <div class="carousel_btn-box">
-        <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        
+          
           <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        
+        
           <span class="sr-only">Next</span>
-        </a>
+        
       </div>
     </div>
   </section>
@@ -138,7 +138,7 @@
                 For Women
               </h2>
               <a href="">
-                Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                Shop Now 
               </a>
             </div>
           </div>
@@ -151,7 +151,7 @@
                 For Men
               </h2>
               <a href="">
-                Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                Shop Now 
               </a>
             </div>
           </div>
@@ -164,11 +164,12 @@
                 For kids
               </h2>
               <a href="">
-                Shop Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                Shop Now 
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -176,222 +177,21 @@
   <!-- end category section -->
 
   <!-- shop section -->
-  
-</p><br/>
+  <section class="shop_section layout_padding">
+    <div class="container">         
+    <div class="heading_container heading_center">
+</p>
 <%= form_tag("/gallery/search", method: "get") do %>
-  <%= label_tag(:Search) %>
   <%= text_field_tag(:search) %>
   <%= submit_tag("Search") %>
 <% end %>
+
+
+
+<h2 id="lll" ></h2>
 <%= yield %>
-  <section class="shop_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Latest Products
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $200
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $175
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $190
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $155
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p5.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $185
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p6.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $170
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p7.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $200
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="/assets/p8.png" alt="">
-              </div>
-              <div class="detail-box">
-                <a href="">
-                  Aviator Glasses
-                </a>
-                <h6>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-half-empty" aria-hidden="true"></i>
-                </h6>
-                <h6>
-                  $180
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View All Products
-        </a>
-      </div>
-    </div>
-  </section>
+  </div></div></div>
+</section>
 
   <!-- end shop section -->
 
@@ -413,7 +213,7 @@
               </h2>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+              eyeplus is the leading e-commerce portal for eyewear in India. It has revolutionised the eyewear industry in the country with its omni-channel approach. From an ever-growing number of offline stores across major cities in the country to innovative integration of technology while purchasing online, eyeplus caters to every customer with several deals and offers.
             </p>
             <a href="">
               Read More
@@ -439,63 +239,51 @@
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="/assets/b1.jpg" alt="">
+              <img src="/assets/p2.png" alt="">
               <h4 class="blog_date">
-                10/08/2020
+                29/09/2021
               </h4>
             </div>
             <div class="detail-box">
               <h5>
-                Molestiae ad reiciendis dignissimos
+                FASHION GLASSES
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              
+              
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="/assets/b2.jpg" alt="">
+              <img src="/assets/p8.png" alt="">
               <h4 class="blog_date">
-                11/08/2020
+                29/08/2021
               </h4>
             </div>
             <div class="detail-box">
               <h5>
-                Dolores vel maiores voluptatem enim
+                STYLISH GLASSES
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              
+             
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="/assets/b3.jpg" alt="">
+              <img src="/assets/p3.png" alt="">
               <h4 class="blog_date">
-                11/08/2020
+                29/07/2020
               </h4>
             </div>
             <div class="detail-box">
               <h5>
-                Molestiae ad reiciendis dignissimos
+                GREEN GLASSES
               </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              
+              
             </div>
           </div>
         </div>
@@ -506,139 +294,7 @@
   <!-- end blog section -->
 
   <!-- client section -->
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Testimonial
-        </h2>
-        <p>
-          Even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
-        </p>
-      </div>
-    </div>
-    <div class="container px-0">
-      <div id="customCarousel2" class="carousel  slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-10 mx-auto">
-                  <div class="box">
-                    <div class="img-box">
-                      <img src="/assets/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <div class="client_info">
-                        <div class="client_name">
-                          <h5>
-                            Sara Cavill
-                          </h5>
-                          <h6>
-                            Customer
-                          </h6>
-                        </div>
-                        <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum
-                        dolore eu fugia
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-10 mx-auto">
-                  <div class="box">
-                    <div class="img-box">
-                      <img src="/assets/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <div class="client_info">
-                        <div class="client_name">
-                          <h5>
-                            Sara Cavill
-                          </h5>
-                          <h6>
-                            Customer
-                          </h6>
-                        </div>
-                        <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum
-                        dolore eu fugia
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-10 mx-auto">
-                  <div class="box">
-                    <div class="img-box">
-                      <img src="/assets/client.jpg" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <div class="client_info">
-                        <div class="client_name">
-                          <h5>
-                            Sara Cavill
-                          </h5>
-                          <h6>
-                            Customer
-                          </h6>
-                        </div>
-                        <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum
-                        dolore eu fugia
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
   <!-- end client section -->
 
   <!-- info section -->
@@ -654,22 +310,9 @@
                   About
                 </h4>
                 <p>
-                  Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                  eyeplus is the leading e-commerce portal for eyewear in India. It has revolutionised the eyewear industry in the country with its omni-channel approach.
                 </p>
-                <div class="info_social">
-                  <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                  </a>
-                </div>
+                
               </div>
             </div>
             <div class="col-md-4 info-col">
@@ -678,24 +321,21 @@
                   Reach at..
                 </h4>
                 <div class="contact_link_box">
-                  <a href="">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  
                     <span>
                       Location
                     </span>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  
+                  
                     <span>
-                      Call +01 1234567890
+                      Call 919490410337
                     </span>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                
+                  
                     <span>
-                      demo@gmail.com
+                      sowjanya.m@westagilelabs.com
                     </span>
-                  </a>
+                
                 </div>
               </div>
             </div>
@@ -731,7 +371,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="https://html.design/">Eyeplus</a>
       </p>
     </div>
   </footer>
